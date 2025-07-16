@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAT Merit Calculator - FAST</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .active-tab {
+      background-color: #2563eb;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-screen">
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">FAST NAT Merit Calculator</h1>
+    <p class="text-sm">Select Program Category & Calculate Aggregate from NAT Marks</p>
+  </header>
+
+  <nav class="flex flex-wrap justify-center bg-blue-800 text-white text-sm">
+    <a href="index.html" class="p-3 bg-blue-900">Home</a>
+    <a href="nat.html" class="p-3 hover:bg-blue-900">NAT Marks</a>
+    <a href="nu.html" class="p-3 hover:bg-blue-900">NU Marks</a>
+    <a href="campus.png" class="p-3 hover:bg-blue-900">Campus Merit</a>
+    <a href="faqs.html" class="p-3 hover:bg-blue-900">FAQs</a>
+  </nav>
+
+  <main class="p-4 max-w-4xl mx-auto">
+    <!-- Program Tabs -->
+    <section class="text-center mb-4">
+      <h2 class="text-xl font-bold mb-2 text-white">Select Program Category</h2>
+      <div class="flex flex-wrap justify-center space-x-2">
+        <button onclick="switchProgram('computing')" id="btn-computing" class="program-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm active-tab">Computing</button>
+        <button onclick="switchProgram('engineering')" id="btn-engineering" class="program-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm">Engineering</button>
+        <button onclick="switchProgram('business')" id="btn-business" class="program-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm">Business</button>
+      </div>
+    </section>
+
+    <!-- Policy Section -->
+    <section class="text-center mb-4">
+      <div id="policy-tags" class="flex justify-center flex-wrap gap-2 text-xs mt-2"></div>
+    </section>
+
+    <!-- Degree Tags -->
+    <section class="text-center mb-4">
+      <h3 class="text-white font-semibold mb-1">Degrees:</h3>
+      <div id="degree-tags" class="flex justify-center flex-wrap gap-2"></div>
+    </section>
+
+    <!-- Input Form -->
+    <section class="grid gap-4">
+      <div class="bg-white text-black rounded-lg p-4 shadow">
+        <h3 class="text-md font-bold mb-2 text-blue-900">NAT Marks (Out of 100)</h3>
+        <input id="nat_score" type="number" min="0" max="100" class="w-full border p-2 rounded">
+      </div>
+
+      <div class="bg-white text-black rounded-lg p-4 shadow">
+        <h3 class="text-md font-bold mb-2 text-blue-900">Academic Record</h3>
+        <label class="text-sm">SSC / Matric %:</label>
+        <input id="matric" type="number" min="0" max="100" class="w-full border p-1 rounded mb-2">
+        <label class="text-sm">HSSC / FSC %:</label>
+        <input id="fsc" type="number" min="0" max="100" class="w-full border p-1 rounded">
+      </div>
+    </section>
+
+    <!-- Result Section -->
+    <div class="text-center mt-6">
+      <button onclick="calculateAggregate()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded text-lg">Calculate Aggregate</button>
+      <div class="mt-4">
+        <h3 class="text-lg font-bold text-white">Your Aggregate:</h3>
+        <p id="result" class="text-xl font-semibold text-green-300 mt-2">--</p>
+        <div id="suggestions" class="mt-4"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const programs = {
+      computing: {
+        policy: ["NAT: 50%", "FSc: 40%", "Matric: 10%"],
+        degrees: ["CS", "SE", "AI", "Data Science", "Cyber Security"],
+        weight: { nat: 0.5, fsc: 0.4, matric: 0.1 }
+      },
+      engineering: {
+        policy: ["NAT: 33%", "FSc: 50%", "Matric: 17%"],
+        degrees: ["CV", "EE", "CE"],
+        weight: { nat: 0.33, fsc: 0.5, matric: 0.17 }
+      },
+      business: {
+        policy: ["NAT: 50%", "FSc: 40%", "Matric: 10%"],
+        degrees: ["BBA", "BA", "AF", "FT"],
+        weight: { nat: 0.5, fsc: 0.4, matric: 0.1 }
+      }
+    };
+
+    const meritData = {
+      "BS CS": { PWR: 58.46, CFD: 67.02, ISB: 75.3, LHR: 76.8, KHI: 68.08 },
+      "BS SE": { PWR: 59.73, CFD: 66.68, ISB: 73.01, LHR: 75.6, KHI: 66.52 },
+      "BS AI": { PWR: 64.57, CFD: 66.35, ISB: 74, LHR: null, KHI: 67.43 },
+      "BS DS": { PWR: null, CFD: null, ISB: 71.69, LHR: 74.4, KHI: 66.14 },
+      "BS CYS": { PWR: null, CFD: null, ISB: 71.45, LHR: 75.6, KHI: 66.14 },
+      "BS EE": { PWR: null, CFD: 61.14, ISB: 64, LHR: 69, KHI: null },
+      "BS CV": { PWR: null, CFD: null, ISB: null, LHR: 56.5, KHI: null },
+      "BS CE": { PWR: null, CFD: null, ISB: 71.9, LHR: null, KHI: null },
+      "BBA": { PWR: null, CFD: 63.49, ISB: 56.62, LHR: 56.62, KHI: null },
+      "BSBA": { PWR: null, CFD: null, ISB: 56.62, LHR: 56.62, KHI: 56.62 },
+      "BS AF": { PWR: null, CFD: null, ISB: 56.62, LHR: 56.62, KHI: null },
+      "BS FT": { PWR: null, CFD: 60.2, ISB: 56.62, LHR: 56.62, KHI: 56.62 }
+    };
+
+    let currentProgram = 'computing';
+
+    function switchProgram(type) {
+      currentProgram = type;
+      document.querySelectorAll('.program-btn').forEach(btn => btn.classList.remove('active-tab'));
+      document.getElementById('btn-' + type).classList.add('active-tab');
+      loadPolicyAndDegrees();
+      document.getElementById('suggestions').innerHTML = "";
+      document.getElementById('result').textContent = "--";
+    }
+
+    function loadPolicyAndDegrees() {
+      const p = programs[currentProgram];
+      const policyTags = p.policy.map(item => `<span class='bg-green-100 text-green-900 px-3 py-1 rounded-full text-xs'>${item}</span>`).join('');
+      document.getElementById('policy-tags').innerHTML = policyTags;
+      const degreeTags = p.degrees.map(deg => `<span class='bg-white text-blue-800 px-3 py-1 rounded-full text-sm'>${deg}</span>`).join('');
+      document.getElementById('degree-tags').innerHTML = degreeTags;
+    }
+
+    function calculateAggregate() {
+      const nat = parseFloat(document.getElementById('nat_score').value) || 0;
+      const matric = parseFloat(document.getElementById('matric').value) || 0;
+      const fsc = parseFloat(document.getElementById('fsc').value) || 0;
+      const weight = programs[currentProgram].weight;
+      const finalAggregate = (nat * weight.nat) + (fsc * weight.fsc) + (matric * weight.matric);
+      document.getElementById('result').textContent = finalAggregate.toFixed(2) + '%';
+
+      suggestPrograms(finalAggregate);
+    }
+
+    function suggestPrograms(aggregate) {
+      let suggestionHTML = "";
+      for (const [program, campuses] of Object.entries(meritData)) {
+        let eligibleCampuses = [];
+        for (const [campus, merit] of Object.entries(campuses)) {
+          if (merit !== null && aggregate >= merit) {
+            eligibleCampuses.push(campus);
+          }
+        }
+        if (eligibleCampuses.length > 0) {
+          suggestionHTML += `
+            <div class="bg-gradient-to-r from-green-200 to-blue-200 text-blue-900 p-4 rounded-xl shadow-md transition-transform transform hover:scale-105 duration-300">
+              <h4 class="font-bold text-lg mb-1">${program}</h4>
+              <p class="text-sm">Eligible at: 
+                <span class="font-semibold text-green-800">${eligibleCampuses.join(", ")}</span>
+              </p>
+            </div>`;
+        }
+      }
+
+      document.getElementById('suggestions').innerHTML = `
+        <h3 class="text-lg font-bold text-white mt-4 mb-3">🎯 Suggested Programs & Campuses:</h3>
+        <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+          ${suggestionHTML || "<p class='text-red-400 mt-2'>No programs found within your aggregate.</p>"}
+        </div>
+      `;
+    }
+
+    // Initial load
+    loadPolicyAndDegrees();
+  </script>
+     <footer class="text-center mt-12 text-sm text-white">
+    <div class="flex justify-center space-x-4 py-3">
+      <a href="https://www.instagram.com/arifali.2007/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
+      <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" /></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/lock.png" /></a>
+    </div>
+    <p>&copy; Arif Ali | FAST NUCES Calculator</p>
+    <br>
+  
+  </footer>
+</body>
+</html>

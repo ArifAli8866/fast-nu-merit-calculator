@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs - FAST NUCES</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      transform: scale(1.02);
+      background-color: #e0f2fe;
+      color: #1e3a8a;
+    }
+
+    .highlight {
+      background-color: #facc15;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-3xl font-bold">FAST NUCES FAQs</h1>
+    <p class="text-sm">Get answers to common student and admission queries</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="flex flex-wrap justify-center bg-blue-800 text-white text-sm">
+    <a href="index.html" class="p-3 hover:bg-blue-900">Home</a>
+    <a href="nat.html" class="p-3 hover:bg-blue-900">NAT Marks</a>
+    <a href="nu.html" class="p-3 hover:bg-blue-900">NU Marks</a>
+    <a href="merit.html" class="p-3 hover:bg-blue-900">Campus Merit</a>
+    <a href="faq.html" class="p-3 bg-blue-900">FAQs</a>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="max-w-4xl mx-auto mt-6 px-4">
+    <input type="text" id="searchInput" placeholder="Search FAQs..." class="w-full p-3 rounded shadow text-black" onkeyup="filterFAQs()" />
+  </div>
+
+  <!-- FAQs Sections -->
+  <main class="max-w-5xl mx-auto px-4 mt-8">
+    <!-- Student FAQs -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4 border-b border-white pb-2">Student FAQs</h2>
+      <div id="student-faqs" class="grid gap-4">
+        <div class="faq-item p-4 bg-white text-black rounded shadow">What is the social life like at FAST?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Is the test in last dates difficult?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Where to prepare Advance Math?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Where to prepare Basic Math?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Where to prepare English?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Where to prepare IQ?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">How can I calculate my aggregate?</div>
+      </div>
+    </section>
+
+    <!-- University FAQs -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 border-b border-white pb-2">University Website FAQs</h2>
+      <div id="uni-faqs" class="grid gap-4">
+        <div class="faq-item p-4 bg-white text-black rounded shadow">How Can I Apply for Admission?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">I need the fee structure</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">How much is the semester fee?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Are there any additional fees being charged?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">I can't afford to pay the fees.</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">I have applied for the NU loan but still can't afford to pay the first semester.</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">I have got an offer from another university and would like to apply for refund.</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">What are the emails on which I can contact campuses?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Nobody is picking up my phone</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">I have uploaded wrong document; how can I correct it?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Where can I find test patterns and test samples?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">When will test results be announced, how will I know if I'm selected?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Can I migrate / transfer to another campus after admission?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">What are the hostel arrangements?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Are Electrical Engineering programs accredited with the Pakistan Engineering Council?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Does FAST offer any scholarship?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Is FAST better than other universities?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">Can I apply for more than one campus?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">How is merit calculated?</div>
+        <div class="faq-item p-4 bg-white text-black rounded shadow">What are the transport arrangements?</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center mt-12 text-sm text-white">
+    <div class="flex justify-center space-x-4 py-3">
+      <a href="https://www.instagram.com/arifali.2007/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
+      <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" /></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/lock.png" /></a>
+    </div>
+    <p>&copy; Arif Ali | FAST NUCES Calculator</p>
+    <br>
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    function filterFAQs() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const allItems = document.querySelectorAll(".faq-item");
+
+      allItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = "block";
+          item.classList.add("highlight");
+        } else {
+          item.style.display = "none";
+          item.classList.remove("highlight");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
