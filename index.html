@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAST Merit Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: scale(1.03);
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">FAST NUCES Admission Test Merit Calculator</h1>
+    <p class="text-sm">Your trusted tool for admission test and merit calculation</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="flex flex-wrap justify-center bg-blue-800 text-white text-sm">
+    <a href="index.html" class="p-3 hover:bg-blue-900">Home</a>
+    <a href="nat.html" class="p-3 hover:bg-blue-900">NAT Marks</a>
+    <a href="nu.html" class="p-3 hover:bg-blue-900">NU Marks</a>
+    <a href="merit.html" class="p-3 hover:bg-blue-900">Campus Merit</a>
+    <a href="faqs.html" class="p-3 hover:bg-blue-900">FAQs</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="p-4 max-w-screen-lg mx-auto">
+    
+    <!-- Intro -->
+    <section class="text-center mb-6">
+      <h2 class="text-xl font-semibold">Welcome to FAST NUCES Aggregate Calculator</h2>
+      <p class="text-sm text-gray-300">Calculate your admission chances and compare with previous merit.</p>
+    </section>
+
+    <!-- WhatsApp Group Button -->
+    <section class="text-center mb-4">
+      <a href="#" class="inline-flex items-center justify-center bg-green-600 text-white py-2 px-4 rounded shadow-md hover:bg-green-700">
+        ✉ Join Admission 2025 WhatsApp Group
+      </a>
+    </section>
+
+    <!-- Feature Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white text-black rounded-xl shadow p-4 text-center card-hover">
+        <img src="cal.png" alt="Calculator" class="mx-auto mb-2 w-12 h-12">
+        <h3 class="font-bold text-lg">NAT Marks Calculator</h3>
+        <p class="text-sm text-gray-700">Calculate aggregate using NAT, Matric, and FSc percentages</p>
+        <a href="nat.html" class="text-blue-600 mt-2 inline-block font-semibold">Get Started</a>
+      </div>
+
+      <div class="bg-white text-black rounded-xl shadow p-4 text-center card-hover">
+        <img src="gra.png" alt="Graph" class="mx-auto mb-2 w-12 h-12">
+        <h3 class="font-bold text-lg">NU Marks Calculator</h3>
+        <p class="text-sm text-gray-700">Calculate NU test marks with negative marking and final aggregate</p>
+        <a href="nu.html" class="text-blue-600 mt-2 inline-block font-semibold">Get Started</a>
+      </div>
+
+      <div class="bg-white text-black rounded-xl shadow p-4 text-center card-hover">
+        <img src="campus.png" alt="Campus" class="mx-auto mb-2 w-12 h-12">
+        <h3 class="font-bold text-lg">Campus & Program Merit</h3>
+        <p class="text-sm text-gray-700">Check previous year’s merit for all programs</p>
+        <a href="merit.html" class="text-blue-600 mt-2 inline-block font-semibold">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+     <footer class="text-center mt-12 text-sm text-white">
+    <div class="flex justify-center space-x-4 py-3">
+      <a href="https://www.instagram.com/arifali.2007/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
+      <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" /></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/lock.png" /></a>
+    </div>
+    <p>&copy; Arif Ali | FAST NUCES Calculator</p>
+    <br>
+  
+  </footer>
+
+</body>
+</html>
