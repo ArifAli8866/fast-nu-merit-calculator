@@ -8,25 +8,25 @@
 </head>
 <body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-screen">
   <header class="bg-blue-900 text-white p-4 text-center">
-    <h1 class="text-2xl font-bold">FAST NU Merit Calculator</h1>
-    <p class="text-sm">Select Program Category & Calculate Accurate Aggregate</p>
+    <h1 class="text-2xl font-bold noselect">FAST NU Merit Calculator</h1>
+    <p class="text-sm noselect">Select Program Category & Calculate Accurate Aggregate</p>
   </header>
-
+<link rel="stylesheet" href="style.css">
   <nav class="flex flex-wrap justify-center bg-blue-800 text-white text-sm">
-    <a href="index.html" class="p-3 hover:bg-blue-900">Home</a>
-    <a href="nat.html" class="p-3 hover:bg-blue-900">NAT Marks</a>
-    <a href="nu.html" class="p-3 bg-blue-900">NU Marks</a>
-    <a href="merit.html" class="p-3 hover:bg-blue-900">Campus Merit</a>
-    <a href="faqs.html" class="p-3 hover:bg-blue-900">FAQs</a>
+    <a href="index.html" class="p-3 hover:bg-blue-900 noselect">Home</a>
+    <a href="nat.html" class="p-3 hover:bg-blue-900 noselect">NAT Marks</a>
+    <a href="nu.html" class="p-3 bg-blue-900 noselect">NU Marks</a>
+    <a href="merit.html" class="p-3 hover:bg-blue-900 noselect">Campus Merit</a>
+    <a href="faqs.html" class="p-3 hover:bg-blue-900 noselect">FAQs</a>
   </nav>
 
   <main class="p-4 max-w-4xl mx-auto">
     <section class="text-center mb-4">
-      <h2 class="text-xl font-bold mb-2 text-white">Select Program Category</h2>
+      <h2 class="text-xl font-bold mb-2 text-white noselect">Select Program Category</h2>
       <div class="flex flex-wrap justify-center space-x-2">
-        <button onclick="setProgram('computing')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm">Computing</button>
-        <button onclick="setProgram('engineering')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm">Engineering</button>
-        <button onclick="setProgram('business')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm">Business</button>
+        <button onclick="setProgram('computing')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm noselect">Computing</button>
+        <button onclick="setProgram('engineering')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm noselect">Engineering</button>
+        <button onclick="setProgram('business')" class="category-btn bg-white text-blue-800 px-4 py-2 rounded shadow text-sm noselect">Business</button>
       </div>
     </section>
 
@@ -35,56 +35,56 @@
     </section>
 
     <section class="text-center mb-4">
-      <h3 class="text-white font-semibold mb-1">Degrees:</h3>
+      <h3 class="text-white font-semibold mb-1 noselect">Degrees:</h3>
       <div id="degreeDisplay" class="flex justify-center flex-wrap gap-2"></div>
     </section>
 
     <section class="grid md:grid-cols-2 gap-4">
       <div class="bg-white text-black rounded-lg p-4 shadow">
-        <h3 class="text-md font-bold mb-2 text-blue-900">Advanced Math (0–50)</h3>
-        <label class="text-sm">Attempted:</label>
+        <h3 class="text-md font-bold mb-2 text-blue-900 noselect">Advanced Math (0–50)</h3>
+        <label class="text-sm noselect">Attempted:</label>
         <input id="adv_attempted" type="number" min="0" max="50" class="w-full border p-1 rounded mb-2">
-        <label class="text-sm">Correct:</label>
+        <label class="text-sm noselect">Correct:</label>
         <input id="adv_correct" type="number" min="0" max="50" class="w-full border p-1 rounded">
       </div>
 
       <div class="bg-white text-black rounded-lg p-4 shadow">
-        <h3 class="text-md font-bold mb-2 text-blue-900">Basic Math (0–20)</h3>
-        <label class="text-sm">Attempted:</label>
+        <h3 class="text-md font-bold mb-2 text-blue-900 noselect">Basic Math (0–20)</h3>
+        <label class="text-sm noselect">Attempted:</label>
         <input id="basic_attempted" type="number" min="0" max="20" class="w-full border p-1 rounded mb-2">
-        <label class="text-sm">Correct:</label>
+        <label class="text-sm noselect">Correct:</label>
         <input id="basic_correct" type="number" min="0" max="20" class="w-full border p-1 rounded">
       </div>
 
       <div class="bg-white text-black rounded-lg p-4 shadow">
-        <h3 class="text-md font-bold mb-2 text-blue-900">IQ Section (0–20)</h3>
-        <label class="text-sm">Attempted:</label>
+        <h3 class="text-md font-bold mb-2 text-blue-900 noselect">IQ Section (0–20)</h3>
+        <label class="text-sm noselect">Attempted:</label>
         <input id="iq_attempted" type="number" min="0" max="20" class="w-full border p-1 rounded mb-2">
-        <label class="text-sm">Correct:</label>
+        <label class="text-sm noselect">Correct:</label>
         <input id="iq_correct" type="number" min="0" max="20" class="w-full border p-1 rounded">
       </div>
 
       <div class="bg-white text-black rounded-lg p-4 shadow">
-        <h3 class="text-md font-bold mb-2 text-blue-900">English Section (0–30)</h3>
-        <label class="text-sm">Attempted:</label>
+        <h3 class="text-md font-bold mb-2 text-blue-900 noselect">English Section (0–30)</h3>
+        <label class="text-sm noselect">Attempted:</label>
         <input id="eng_attempted" type="number" min="0" max="30" class="w-full border p-1 rounded mb-2">
-        <label class="text-sm">Correct:</label>
+        <label class="text-sm noselect">Correct:</label>
         <input id="eng_correct" type="number" min="0" max="30" class="w-full border p-1 rounded">
       </div>
 
       <div class="bg-white text-black rounded-lg p-4 shadow col-span-full">
-        <h3 class="text-md font-bold mb-2 text-blue-900">Academic Record</h3>
-        <label class="text-sm">SSC / O-Level %:</label>
+        <h3 class="text-md font-bold mb-2 text-blue-900 noselect">Academic Record</h3>
+        <label class="text-sm noselect">SSC / O-Level %:</label>
         <input id="matric" type="number" min="0" max="100" class="w-full border p-1 rounded mb-2">
-        <label class="text-sm">HSSC / A-Level %:</label>
+        <label class="text-sm noselect">HSSC / A-Level %:</label>
         <input id="fsc" type="number" min="0" max="100" class="w-full border p-1 rounded">
       </div>
     </section>
 
     <div class="text-center mt-6">
-      <button onclick="calculateAggregate()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded text-lg">Calculate Aggregate</button>
+      <button onclick="calculateAggregate()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded text-lg noselect">Calculate Aggregate</button>
       <div class="mt-4">
-        <h3 class="text-lg font-bold text-white">Your Aggregate:</h3>
+        <h3 class="text-lg font-bold text-white noselect">Your Aggregate:</h3>
         <p id="result" class="text-xl font-semibold text-green-300 mt-2">--</p>
         <div id="suggestions" class="mt-4"></div>
       </div>
