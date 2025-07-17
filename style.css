@@ -1,0 +1,82 @@
+/* ========== General Utility ========== */
+.noselect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.click-effect {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.click-effect:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== Glass Card ========== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.glass-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== FAQ Items ========== */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: scale(1.02);
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+}
+
+.highlight {
+  background-color: #facc15;
+  color: #1e293b;
+}
+
+/* ========== Card Hover ========== */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Table Styling ========== */
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.3s ease;
+}
+
+/* ========== Active Tab Button ========== */
+.active-tab {
+  background-color: #2563eb;
+  color: white;
+}
