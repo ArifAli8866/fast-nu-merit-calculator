@@ -30,6 +30,15 @@
       -moz-user-select: none;
       -ms-user-select: none;
     }
+    .click-effect {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.click-effect:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white min-h-screen">
@@ -91,7 +100,7 @@
   </main>
 
   <!-- Footer -->
-     <footer class="text-center mt-12 text-sm text-white noselect">
+     <footer class="text-center mt-12 text-sm text-white noselect click-effect">
     <div class="flex justify-center space-x-4 py-3">
       <a href="https://www.instagram.com/arifali.2007/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
       <a href="https://www.linkedin.com/in/arif-ali-23a38032a/" target="_blank"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" /></a>
