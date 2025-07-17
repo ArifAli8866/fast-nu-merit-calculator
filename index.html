@@ -15,6 +15,7 @@
 
     gtag('config', 'G-G8RWG2JDNQ');
     </script>
+
   <style>
     .card-hover {
       transition: all 0.3s ease;
@@ -30,14 +31,27 @@
       -moz-user-select: none;
       -ms-user-select: none;
     }
-    .click-effect {
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.click-effect:active {
-  transform: scale(0.96);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+    .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  .glass-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  }
+  .click-effect {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .click-effect:active {
+    transform: scale(0.96);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
 
   </style>
 </head>
@@ -45,17 +59,17 @@
 
   <!-- Header -->
   <header class="bg-blue-900 text-white p-4 text-center">
-    <h1 class="text-2xl font-bold noselect">FAST NUCES Admission Test Merit Calculator</h1>
+    <h1 class="text-2xl font-bold noselect lass-card click-effect">FAST NUCES Admission Test Merit Calculator</h1>
     <p class="text-sm noselect">Your trusted tool for admission test and merit calculation</p>
   </header>
 
   <!-- Navigation -->
   <nav class="flex flex-wrap justify-center bg-blue-800 text-white text-sm">
-    <a href="index.html" class="p-3 hover:bg-blue-900">Home</a>
-    <a href="nat.html" class="p-3 hover:bg-blue-900">NAT Marks</a>
-    <a href="nu.html" class="p-3 hover:bg-blue-900">NU Marks</a>
-    <a href="merit.html" class="p-3 hover:bg-blue-900">Campus Merit</a>
-    <a href="faqs.html" class="p-3 hover:bg-blue-900">FAQs</a>
+    <a href="index.html" class="p-3 hover:bg-blue-900 lass-card click-effect ">Home</a>
+    <a href="nat.html" class="p-3 hover:bg-blue-900 lass-card click-effect ">NAT Marks</a>
+    <a href="nu.html" class="p-3 hover:bg-blue-900 lass-card click-effect ">NU Marks</a>
+    <a href="merit.html" class="p-3 hover:bg-blue-900 lass-card click-effect ">Campus Merit</a>
+    <a href="faqs.html" class="p-3 hover:bg-blue-900 lass-card click-effect ">FAQs</a>
   </nav>
 
   <!-- Main Content -->
