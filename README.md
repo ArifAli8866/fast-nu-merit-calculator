@@ -418,7 +418,7 @@ fast-aggregate-calculator/
 <table>
 <tr>
 <td align="center">
-<a href="https://github.com/arifali">
+<a href="https://github.com/ArifAli8866)">
 <img src="https://avatars.githubusercontent.com/u/yourusername" width="100px;" alt="Arif Ali"/>
 <br />
 <sub><b>Arif Ali</b></sub>
@@ -464,8 +464,7 @@ We welcome contributions! Here's how you can help:
 3. Suggest implementation if possible
 
 ### 🔧 Development Process
-```bash
-# 1. Fork the repository
+```bash# 1. Fork the repository
 # 2. Create a feature branch
 git checkout -b feature/AmazingFeature
 
@@ -490,12 +489,9 @@ git push origin feature/AmazingFeature
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ```
 MIT License
-
 Copyright (c) 2024 Arif Ali & Sohaib Kamran
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
